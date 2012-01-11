@@ -1,0 +1,37 @@
+{%- block doctype %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{%- endblock doctype %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+{%- block header %}
+  <div id="header">
+    <h1>header : {{ title }}</h1>
+  </div>
+{%- endblock header %}
+{%- block sidebar %}
+  <div id="sidebar">
+    <h2>sidebar</h2>
+  </div>
+{%- endblock sidebar %}
+{%- block document %}
+  <div id="document">
+    <h2>document</h2>
+    {%- block body %}{%- endblock body %}
+  </div>
+{%- endblock document %}
+</div>
+{%- block footer %}
+<div id="footer">
+  <h1>footer</h1>
+</div>
+{%- endblock footer %}
+</body>
+</html>
+
