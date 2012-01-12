@@ -6,13 +6,15 @@
 kuenishi (7)
 ============
 
-Contents:
+kuenishi is an ordinary man living in Tokyo, Japan, with his family, including a gutsy son.
 
 .. toctree::
    :maxdepth: 2
 
    cv
+   opensource
    persona
+
 
 
 .. Indices and tables
