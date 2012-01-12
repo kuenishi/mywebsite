@@ -1,6 +1,6 @@
 {%- block doctype %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {%- endblock doctype %}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,28 +10,53 @@
 </head>
 <body>
 <div id="wrapper">
-{%- block header %}
+  {%- block header %}
   <div id="header">
-    <h1>header : {{ title }}</h1>
+    <h1>{{ title }}</h1>
   </div>
-{%- endblock header %}
-{%- block sidebar %}
+  {%- endblock header %}
+  {%- block sidebar %}
   <div id="sidebar">
     <h2>sidebar</h2>
+    {%- if sidebars != None %}
+      {#- new style sidebar: explicitly include/exclude templates #}
+      {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+      {%- endfor %}
+    {%- else %}
+      {#- old style sidebars: using blocks -- should be deprecated #}
+      {%- block sidebartoc %}
+        {%- include "localtoc.html" %}
+      {%- endblock %}
+      {%- block sidebarrel %}
+        {%- include "relations.html" %}
+      {%- endblock %}
+      {%- block sidebarsourcelink %}
+        {%- include "sourcelink.html" %}
+      {%- endblock %}
+      {%- if customsidebar %}
+        {%- include customsidebar %}
+      {%- endif %}
+      {%- block sidebarsearch %}
+        {%- include "searchbox.html" %}
+      {%- endblock %}
+  {%- endif %}
   </div>
-{%- endblock sidebar %}
-{%- block document %}
+  {%- endblock sidebar %}
+  {%- block document %}
   <div id="document">
-    <h2>document</h2>
-    {%- block body %}{%- endblock body %}
+    {%- block body %}
+    {%- endblock body %}
   </div>
-{%- endblock document %}
+  {%- endblock document %}
 </div>
+
 {%- block footer %}
 <div id="footer">
   <h1>footer</h1>
 </div>
 {%- endblock footer %}
+
 </body>
 </html>
 

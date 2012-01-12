@@ -1,5 +1,27 @@
 
+#header {
+  background-color: #a2e8fe;
+}
+
+#sidebar {
+  background-color: #4b7afd;
+  float: left;
+  width: 20%;
+}
+
+#document {
+  background-color: #f7fed3;
+  float:left;
+  width: 80%;
+}
+
+#footer {
+  background-color: #fcc1c1;
+  clear: both;
+}
+
 h1 {
-    size: xlarge;
-    color: pink;
+  size: xlarge;
+  color: pink;
+  margin: 0;
 }
