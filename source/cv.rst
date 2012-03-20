@@ -27,8 +27,8 @@ Work Experience
 
 - Engineer, at NTT Information Sharing Platform Laboratories, April 2007 - current
 
- - Development of scalable, highly available, data intensive software system using massive combination of inexpensive hardware. Developed 2-3 software written in C, C++.
-
+ - 2011- open source: Development of `Jubatus <http://jubat.us>`_ - joint work with Preferred Structure Inc., writing C++, Python and OCaml.
+ - 2008- proprietary: Development of scalable, highly available, data intensive software system using massive combination of inexpensive hardware. Developed 2-3 software written in C, C++.
 
 
 Education
