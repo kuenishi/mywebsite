@@ -12,7 +12,10 @@ Contact
 Interest
 --------
 
-Distributed Systems, Database Systems, High Availability, Functional Programming Languages, and Reliability/Performance Design for non-stop middleware servers
+- How computer (science) contribute to the real world, not only by utilizing computer, but to applying principles or theory of the computer science to the real world?
+- Distributed Systems, Database Systems, High Availability, Functional Programming Languages, and Reliability/Performance Design for non-stop middleware servers.
+- Functional Programming Languages
+- What kind of man my son will grow to be?
 
 Computer Skills
 ---------------
