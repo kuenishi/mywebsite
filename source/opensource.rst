@@ -13,6 +13,7 @@ Open Source Contrubutions
 - committer: `MessagePack (Erlang) <http://msgpack.org>`_ (2010-)
 
  - MessagePack is a binary-based efficient object serialization library. It enables to exchange structured objects between many languages like JSON. But unlike JSON, it is very fast and small. Participating as a committer of Erlang-binding of both MessagePack and MessagePack-RPC.
+ - In 2012, MessagePack-RPC/Erlang are updated to `cowboy <https://github.com/extend/cowboy>`_ -based system from a system with its own transport layer.
 
 - Yatce: yet another TokyoCabinet-Erlang binding (2009)
 
