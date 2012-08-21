@@ -1,4 +1,3 @@
-
 Curriculum Vitae
 ================
 
@@ -28,8 +27,10 @@ Computer Skills
 Work Experience
 ---------------
 
+- Engineer, at NTT Software Innovation Center, 2012
 - Engineer, at NTT Information Sharing Platform Laboratories, April 2007 - current
 
+ - On 2012 `Information Sharing Platform Laboratories <http://www2.pflab.ecl.ntt.co.jp>`_ divided into two laboratories - `Software Innovation Center <http://www.sic.ecl.ntt.co.jp>`_ and Secure Platform Laboratories.
  - 2011- open source: Development of `Jubatus <http://jubat.us>`_ - joint work with Preferred Structure Inc., writing C++, Python and OCaml.
  - 2008- proprietary: Development of scalable, highly available, data intensive software system using massive combination of inexpensive hardware. Developed 2-3 software written in C, C++.
 
