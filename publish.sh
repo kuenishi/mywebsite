@@ -1,6 +1,5 @@
 #!/bin/sh
 
-omake html
 cd build
 rm -rf kuenishi.github.com/_static
 rm -rf kuenishi.github.com/_sources
