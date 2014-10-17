@@ -3,7 +3,7 @@ Open Source Contrubutions
 
 Here's `my wishlist <http://www.amazon.co.jp/registry/wishlist/1P6IW44XCM1H2>`_ . Your donation with product name will motivate me for sure.
 
-- `meddatum <https://github.com/kuenishi/meddatum>`_ : A tool to import/search/handle medical record formats with Riak Search 2.
+- `meddatum <https://github.com/kuenishi/meddatum>`_ (2013-) : A tool to import/search/handle medical record formats with Riak Search 2.
 
 - `Riak <https://github.com/basho/riak>`_ , `Riak CS <https://github.com/basho/riak_cs>`_ (2012-)
 
