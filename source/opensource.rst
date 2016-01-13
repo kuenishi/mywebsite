@@ -1,4 +1,4 @@
-Open Source Contrubutions
+Open Source Contributions
 =========================
 
 Here's `my wishlist in Amazon <http://www.amazon.co.jp/registry/wishlist/1P6IW44XCM1H2>`_ and my bitcoin wallet is `1Nk9j9PwVVDL5sud6B3WcusjkJv2UirEtg` . Your donation with product name will motivate me for sure. See my `Github <https://github.com/kuenishi>`_ or `Bitbucket <https://bitbucket.org/kuenishi>`_ account for all personal software.
@@ -37,4 +37,3 @@ Here's `my wishlist in Amazon <http://www.amazon.co.jp/registry/wishlist/1P6IW44
 - Japanese translation of *CouchDB: the Definitive Guide* (2009-2011)
 
  - As the book's script is open by CC-3.0 license, I started translation project with same licence. Many people participated on translation and finally got `finished <http://couchdb-jp.github.com/couchdb-guide/editions/1/ja/index.html>`_ (`the project page <https://github.com/couchdb-jp/couchdb-guide/>`_).
-
