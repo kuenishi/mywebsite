@@ -197,7 +197,6 @@ LUKSはかなり高機能で、YubiKeyで鍵を渡して起動とか、USBメモ
 この時点で ``/etc/fstab`` を作ったり、基本的なファイルを先においておく。::
 
   # genfstab -U /mnt >> /mnt/etc/fstab
-  # arch-chroot /mnt
   [root@archiso /]# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
   [root@archiso /]# echo "LANG=en_US.UTF-8" > /etc/locale.conf
   [root@archiso /]# locale-gen
@@ -713,6 +712,42 @@ Fix kernel or other files 2018/4/6
 ++++++++++++++++++++++++++++++++++
 
 ``yaourt -Syu`` が妙に時間がかかったのでマシンを途中で止めてしまったと
-ころ、起動時（DKMSのパスワード入力）時にキーボードが効かなくなり、パス
+ころ、起動時（LUKSのパスワード入力）時にキーボードが効かなくなり、パス
 ワードを入力できなくなった。このためその後のブートシーケンスを継続でき
 ない。
+
+まずは起動して ``yaourt -Syu`` の続きを完了することを目指す。ブートディ
+スクを使って、まずブートディスクのカーネルで起動しておく。それでchroot
+環境をつくる。::
+
+  root@archiso ~ # cryptsetup open /dev/nvme0n1p2 crypt-root
+  Enter passphrase for /dev/nvme0n1p2:
+  root@archiso ~ # mount /dev/mapper/crypt-root /mnt
+  root@archiso ~ # mount /dev/nvme0n1p1 /mnt/boot
+  root@archiso ~ # timedatectl set-ntp true
+  root@archiso ~ # timedatectl status
+  ...
+  # arch-chroot /mnt
+  [root@archiso /]# yaourt -Syu
+
+とやると、 ``pacman -Syu`` やってるんじゃないの？といわれる。定番のロッ
+クファイルが残っているやつなのでロックファイルを消す。::
+
+  [root@archiso /]# rm /var/lib/pacman/db.lck
+  [root@archiso /]# yaourt -Syu
+  ...
+
+今度は普通に最後まで動く。というわけでchroot環境を出てから再起動
+``shutdown -r now`` してみてもやっぱりパスワードを入力できない（キーボー
+ドが使えていない）。はっそういえば…と思いなおして、また同じ手順を繰り
+返して chroot 環境に入って、::
+
+  [root@archiso /]# mkinitcpio -p linux
+  ...
+
+として、 initrd を作り直して再起動したところ無事にキーボードが使えるよ
+うになった。おそらくは vmlinuz (カーネルのファイル) を作っただけで
+initrd を再作成していなかったため何かがズレて起動だけはするけどキーボー
+ドが使えなくなっていたのだろうと思われる。教訓: カーネルのアップデート
+途中に電源長押しで再起動なんかしてはいけないし、 *金曜夕方の退勤間際に
+間違ってもOSのアップデートなんかしてはいけない* 。
