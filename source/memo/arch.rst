@@ -1,9 +1,10 @@
-Arch Linux Installation
-=======================
+Arch Linux Installation & Maintenance
+=====================================
 
 2017/10/19 - 2017/10/20
 
 2018/3/15 カーネルパッチの部分を削除
+2018/4/6 Trouble Shooting追加
 
 ISO Image Download
 ------------------
@@ -516,9 +517,10 @@ GPG key setup esp. pinentry::
 
 - https://www.gnupg.org/gph/en/manual/x334.html
 - `baccounts <https://github.com/kuenishi/baccounts>`_ -> GnuPG 2.0ま
-  でのフォーマットしか対応してないので悩ましい。Archに入っている最新の
-  GnuPGが作るKeyringファイルだと動かない... crypto/openpgp に新しい機
-  能入ってたりしないかな（TODO）
+  でのフォーマットしか対応してないが、新しい GnuPG だと旧フォーマット
+  で出力できる。自前で GnuPG 1.x を入れてると pacman-keyring とかと干
+  渉してシステムアップデートできなくなるトラブルがあったので、自前では
+  入れずに公式でやること。
 
 ClamAV
 ------
@@ -605,25 +607,13 @@ input sudo password and the YubiKey is waiting for your touch.
 
 See also:  `ykpamcfg(1) <https://developers.yubico.com/yubico-pam/Manuals/ykpamcfg.1.html>`_
 
-Trouble Shooting
-----------------
-
-パッケージアップデート時に ``gnupg: signature from "Gaetan Bisson
-<bisson@archlinux.org>" is invalid`` 的なエラーがでて失敗したら、以下
-の手順でキーを更新する::
-
-  $ sudo rm /var/lib/pacman/sync/*
-  $ sudo pacman-key --init
-  $ sudo pacman-key --populate archlinux
-  $ sudo pacman-key --refresh-keys
-
 
 TODO
 ----
 
 - いつの間にかF1~F12 のキーのうちいくつかが使えるようになっていた。不思議
 - YubiKeyを入れるとキーボードのCaps Lockが戻ってしまう
-- pacman/AURのフロントエンドを何か選ぶ -> https://wiki.archlinux.org/index.php/AUR_helpers
+- pacman/AURのフロントエンドを何か選ぶ -> https://wiki.archlinux.org/index.php/AUR_helpers -> とりあえず ``yaourt`` で困っていない。
 - `OpenPGP のスマートカード有効化 <https://wiki.archlinux.jp/index.php/Yubikey#OpenPGP_.E3.82.B9.E3.83.9E.E3.83.BC.E3.83.88.E3.82.AB.E3.83.BC.E3.83.89.E3.83.A2.E3.83.BC.E3.83.89.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96>`_
 
 Reference
@@ -637,9 +627,8 @@ Reference
 
 
 
-
-Arch Linux Installation #2
-==========================
+Arch Linux Installation to machine #2
+-------------------------------------
 
 2018/2/4
 
@@ -701,3 +690,29 @@ Install yaourt
 --------------
 
 https://wiki.archlinux.jp/index.php/Yaourt
+
+
+
+General Trouble Shooting
+------------------------
+
+Pacman のアップデートで GnuPG エラーが出る
++++++++++++++++++++++++++++++++++++++++++++
+
+パッケージアップデート時に ``gnupg: signature from "Gaetan Bisson
+<bisson@archlinux.org>" is invalid`` 的なエラーがでて失敗したら、以下
+の手順でキーを更新する::
+
+  $ sudo rm /var/lib/pacman/sync/*
+  $ sudo pacman-key --init
+  $ sudo pacman-key --populate archlinux
+  $ sudo pacman-key --refresh-keys
+
+
+Fix kernel or other files 2018/4/6
+++++++++++++++++++++++++++++++++++
+
+``yaourt -Syu`` が妙に時間がかかったのでマシンを途中で止めてしまったと
+ころ、起動時（DKMSのパスワード入力）時にキーボードが効かなくなり、パス
+ワードを入力できなくなった。このためその後のブートシーケンスを継続でき
+ない。
