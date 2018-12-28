@@ -6,5 +6,4 @@ develop-eggs
 build
 *~
 .Python
-include
-lib
+.DS_Store
