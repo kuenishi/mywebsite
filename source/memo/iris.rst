@@ -69,15 +69,15 @@ Lighting with LED
     2 AO3416 MOSFETs
     2 4.7kΩ resistors
 
-  Optional - LEDs and 470Ω resistors 
-  
+  Optional - LEDs and 470Ω resistors
+
 
 But they're not included in the kit so I seeked for them in Akihabara, in 2018/12/28 . And found:
 
 - 100PCS 1/4w 470Ω resistors 金属被覆 @ 300JPY x2
 - 10PCS Nch MOSFET IRFML8244TRPBFTR @ 160JPY
 - 10PCS Nch MOSFET IRLML6344TRPBFTR @ 240JPY
-- `10PCS 角形2.3.4 赤色LED 輝度:1000～1500mcd 指向角:120° 波長:625～630nm 順電圧:1.9～2.3V 順電流:30mA <https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-00GP>`_ @ 500JPY 
+- `10PCS 角形2.3.4 赤色LED 輝度:1000～1500mcd 指向角:120° 波長:625～630nm 順電圧:1.9～2.3V 順電流:30mA <https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-00GP>`_ @ 500JPY
 - 10PCS 角形2.3.4 白色LED 輝度:1000～1500mcd 指向角:120° 波長:590～595nm 順電圧:1.9～2.3V 順電圧:30mA @ 500JPY
 - 10PCS 角形2.3.4 青色LED 輝度:1000～1500mcd 指向角:120° 波長:590～595nm 順電圧:1.9～2.3V 順電圧:30mA @ 500JPY
 - `10PCS 角形2.3.4 緑色LED 輝度:1000～1500mcd 指向角:120° 波長:590～595nm 順電圧:1.9～2.3V 順電圧:30mA <https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-00GS>`_ @ 500JPY
@@ -98,6 +98,37 @@ thought the key typing itself worked very fine.
 .. image:: ../_static/IMG_20181228_220815.jpg
    :alt: Only two LEDs are implemented
    :align: center
+
+
+On 2018/12/30 I tried buying `another LED
+<https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-00GS>`_
+::
+
+  順電圧:3.0～3.4V
+  順電流:20mA
+  1500～2500mcd
+  指向角:120°
+  波長:515～521nm
+
+
+But it didn't worked. The reason was that there wasn't enough current
+provided to LED. `The old Iris build guide <https://docs.keeb.io/iris-build-guide-archive/#solder-led-support-components-40optional41>`_ says::
+
+  470Ω resistors are commonly used, but this value might vary, based
+  on the LEDs you use and the amount of current they draw.
+
+
+Also `Iris rev2.5 ビルドメモ
+<https://qiita.com/natten/items/95a57ee77e1e66ba88e6>`_ uses 4.7Ω (
+RK73H2ATTD471F ) for LED resistors...
+
+But how much? What to buy???
+
+
+- https://www.reddit.com/r/MechanicalKeyboards/comments/7lihur/help_questions_about_smd_leds_for_an_iris/drmkras/
+- https://www.reddit.com/r/MechanicalKeyboards/comments/7evx0x/iris_keyboard_with_led_backlighting/
+- Calculator https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-led-series-resistor
+- Example Calculation https://www.reddit.com/r/MechanicalKeyboards/comments/7evx0x/iris_keyboard_with_led_backlighting/dq7v7y0/
 
 
 Wrist Rest
