@@ -192,18 +192,19 @@ LUKSはかなり高機能で、YubiKeyで鍵を渡して起動とか、USBメモ
    RTC in local TZ: no
 
 ミラーを日本だけのものにしとく。grepだと '--' という余計なものが入るの
-で、消しておくこと。で、最後にベースシステムを ``pacstrap`` でインストー
-ルする::
+で、消しておくこと。ベースシステムを ``pacstrap`` でインストールしてか
+ら、この時点で ``/etc/fstab`` を作っておく。::
 
   # grep Japan -A 1 /etc/pacman.d/mirrorlist > mirrorlist
   (remove  -- here)
   # vi mirrorlist
   # mv mirrorlist /etc/pacman.d/
-  # pacstrap /mnt base base-devel
-
-この時点で ``/etc/fstab`` を作ったり、基本的なファイルを先においておく。::
-
+  # pacstrap /mnt base base-devel linux linux-firmware
   # genfstab -U /mnt >> /mnt/etc/fstab
+
+ ``chroot`` して、OS環境の作成を開始する。まず、基本的なファイルを先においておく。::
+
+  root@archiso ~ # arch-chroot /mnt
   [root@archiso /]# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
   [root@archiso /]# echo "LANG=en_US.UTF-8" > /etc/locale.conf
   [root@archiso /]# locale-gen
