@@ -16,7 +16,6 @@ kuenishi is an ordinary man living in Tokyo, Japan, with his family, including a
 
    cv
    opensource
-   persona
 
 
 Other memorandum
@@ -33,6 +32,27 @@ Other memorandum
    memo/beam
    memo/kudu
    memo/riak-cs-spark
+
+
+
+
+Mainly active in twitter, facebook and his blog.
+
+- `Keybase.io: kuenish <https://keybase.io/kuenishi>`_
+- `Twitter: @kuenishi <http://twitter.com/kuenishi>`_
+- `Japanese Blog (hatena diary) <http://kuenishi.hatenadiary.jp/>`_
+
+- `English Blog <http://kuenishi.blogspot.com>`_
+- `Hatena Social Bookmark <http://b.hatena.ne.jp/kuenishi>`_
+- `LinkedIn <http://www.linkedin.com/in/kuenishi>`_
+- `slideshare <http://www.slideshare.net/kuenishi>`_
+- `SpeakerDeck <https://speakerdeck.com/kuenishi>`_
+
+- `Google+ <https://plus.google.com/117649496798509603328/>`_
+
+- `github <http://github.com/kuenishi>`_
+- bitbucket
+- CiteULike
 
 .. Indices and tables
 .. ==================
