@@ -81,6 +81,12 @@ Publication (ja)
 - "Erlang Update," on "函数型プログラミングの集い" (Functional Programming Meetup Tokyo), Sep 2011 (`slides <_static/FPMeetup2011.html>`_ ) .
 
 
+Talks
+-----
+
+- `"Apache Ozone Behind Simulation And Ai Industries," <https://apachecon.com/acasia2022/sessions/bigdata-1151.html>`_ ApacheCon Asia 2022 ( `Slides <https://speakerdeck.com/kuenishi/apache-ozone-behind-simulation-and-ai-industries>`_ ).
+- `"Distributed Deep Learning with Chainer and Hadoop," <https://speakerdeck.com/kuenishi/distributed-deep-learning-with-chainer-and-hadoop>`_ Hadoop Source Code Reading, 2019.
+
 Education
 ---------
 
