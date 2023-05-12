@@ -1,0 +1,3 @@
+[submodule "kuenishi.github.com"]
+	path = kuenishi.github.com
+	url = git@github.com:kuenishi/kuenishi.github.com.git
