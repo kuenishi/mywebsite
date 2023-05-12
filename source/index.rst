@@ -102,7 +102,11 @@ Memorandum
    :maxdepth: 1
 
    opensource
-   memo/arch
+   memo/arch-core-system
+   memo/arch-gui
+   memo/arch-misc
+   memo/arch-faq
+   memo/arch-cryptsetup
    memo/zfs
    memo/iris
    memo/ergodox-ez
