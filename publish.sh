@@ -17,6 +17,4 @@ git add -A
 #git add _sources/memo/*
 #git add _images/*
 git commit -S -m "autocommit by publish.sh"
-#git push origin master
-
-
+git push origin master
