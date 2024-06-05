@@ -34,7 +34,7 @@ Install cryptsetup and btrfs::
   # mkfs.btrfs /dev/mapper/data-tank
   ....
 
-  # mount /mnt/ /dev/mapper/datatank
+  # mount /dev/mapper/datatank /mnt
 
 
 Check the UUID with lsblk::
