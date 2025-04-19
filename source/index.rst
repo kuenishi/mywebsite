@@ -107,6 +107,7 @@ Memorandum
    memo/arch-misc
    memo/arch-faq
    memo/arch-cryptsetup
+   memo/arch-nvme
    memo/zfs
    memo/iris
    memo/ergodox-ez
