@@ -275,10 +275,14 @@ sd-lvm. <https://bbs.archlinux.org/viewtopic.php?pid=1673320#p1673320>`_
   linux /vmlinuz-linux
   initrd /intel-ucode.img
   initrd /initramfs-linux.img
-  options luks.name=1cf54a61-cd17-43e3-ad00-bf94c29dc922=crypt-root root=/dev/mapper/crypt-root rw
+  options rd.luks.name=1cf54a61-cd17-43e3-ad00-bf94c29dc922=crypt-root root=/dev/mapper/crypt-root rw
 
 `↑はdm-cryptのやつ <https://wiki.archlinux.jp/index.php/Dm-crypt/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E5%AE%9A>`_ をみながら編集した。
+Update: ``luks.name=`` よりも  ``rd.luks.name=`` としたほうがよい。後者でないと、 ``/etc/crypttab`` からdecryptしたいデバイスがあったときに失敗するようになっている。 `Arch Wiki <https://wiki.archlinux.jp/index.php/Dm-crypt/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E5%AE%9A#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E3.83.9E.E3.82.A6.E3.83.B3.E3.83.88.E3.81.99.E3.82.8B>`_ によると
 
+  警告: /etc/crypttab か /etc/crypttab.initramfs を使用していて、かつ luks.* パラメータか rd.luks.* パラメータも使用している場合、カーネルコマンドラインで指定されたデバイスしかアクティブ化されず、Not creating device 'devicename' because it was not specified on the kernel command line. というメッセージが表示されます。これは、luks.* パラメータや rd.luks.* パラメータが、crypttab のデバイスのうちどれをアクティブ化するかを制御するからです。/etc/crypttab 内の全デバイスをアクティブ化するには、luks.* パラメータを使用せず、rd.luks.* を使用してください。/etc/crypttab.initramfs 内の全デバイスをアクティブ化するには、luks.* も rd.luks.* も使用しないでください。
+
+とのこと。
 
 再起動をする *前に* ユーザーを作っておく。::
 
